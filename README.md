@@ -1,36 +1,30 @@
-﻿# PyResponse
+# PyResponse 🚀  
+A lightweight and structured response builder for Flask and FastAPI applications.  
 
+## 📌 Overview  
+PyResponse provides a consistent and structured way to return API responses in Flask and FastAPI applications.  
+It helps standardize response formats while supporting custom messages, error codes, and flexible status handling.  
 
- PyResponse 🚀
-A lightweight and structured response builder for Flask and FastAPI applications.
+## 📖 Features  
+✅ Standardized JSON response format  
+✅ Supports both Flask and FastAPI frameworks  
+✅ Predefined response helpers for common HTTP status codes  
+✅ Customizable messages, data, and error codes  
+✅ Fully tested with pytest  
 
-📌 Overview
-PyResponse provides a consistent and structured way to return API responses in Flask and FastAPI applications.
-It helps standardize response formats while supporting custom messages, error codes, and flexible status handling.
+## 📦 Installation  
 
-📖 Features
-✅ Standardized JSON response format
-✅ Supports both Flask and FastAPI frameworks
-✅ Predefined response helpers for common HTTP status codes
-✅ Customizable messages, data, and error codes
-✅ Fully tested with pytest
-
-📦 Installation
-sh
-Copy
-Edit
+```sh
 pip install -r requirements.txt
-or
 
-sh
-Copy
-Edit
 pip install flask fastapi pydantic pytest
-🚀 Usage
-🔹 Import & Use in Flask
-python
-Copy
-Edit
+```
+
+
+## 🚀 Usage
+###🔹 Import & Use in Flask
+
+```py
 from flask import Flask
 from responses import Ok, BadRequest, NotFound
 
@@ -46,10 +40,11 @@ def error():
 
 if __name__ == "__main__":
     app.run(debug=True)
-🔹 Import & Use in FastAPI
-python
-Copy
-Edit
+```
+
+###🔹 Import & Use in FastAPI
+
+```py
 from fastapi import FastAPI
 from responses import Ok, NotFound
 
@@ -62,23 +57,23 @@ def get_data():
 @app.get("/missing")
 def missing():
     return NotFound(message="Item not found")
+```
 
-🔧 Response Structure
+##🔧 Response Structure
 Every response follows a structured JSON format:
 
-json
-Copy
-Edit
+```json
 {
     "status": 200,
     "message": "Success",
     "data": {...},
     "error_code": "OPTIONAL"
 }
-🛠 Response Builder Function
-python
-Copy
-Edit
+```
+
+##🛠 Response Builder Function
+
+```py
 def build_response(status_code, data=None, message=None, error_code=None):
     response_body = {"status": status_code}
 
@@ -90,40 +85,47 @@ def build_response(status_code, data=None, message=None, error_code=None):
         response_body["error_code"] = error_code
 
     return JSONResponse(content=response_body, status_code=status_code)
-📡 Available Response Helpers
-✅ Success Responses
-Function	HTTP Code	Default Message	Example
-Ok(data, message)	200	"Success"	Ok({"id": 1})
-Created(data, message)	201	"Created successfully"	Created({"user": "Alice"})
-NoContent(message)	204	"No content"	NoContent()
-❌ Error Responses
-Function	HTTP Code	Default Message	Error Code
-BadRequest(message, error_code)	400	"Bad request"	"BAD_REQUEST"
-Unauthorized(message, error_code)	401	"Unauthorized"	"UNAUTHORIZED"
-Forbidden(message, error_code)	403	"Forbidden"	"FORBIDDEN"
-NotFound(message, error_code)	404	"Not found"	"NOT_FOUND"
-InternalServerError(message, error_code)	500	"Internal server error"	"INTERNAL_SERVER_ERROR"
-ServiceUnavailable(message, error_code)	503	"Service unavailable"	"SERVICE_UNAVAILABLE"
-🧪 Running Tests
-Ensure all tests pass before deploying:
+```
 
-sh
-Copy
-Edit
+##📡 Available Response Helpers
+### ✅ Success Responses  
+
+| Function                  | HTTP Code | Default Message          | Example                 |
+|---------------------------|----------|--------------------------|-------------------------|
+| `Ok(data, message)`       | 200      | "Success"                | `Ok({"id": 1})`        |
+| `Created(data, message)`  | 201      | "Created successfully"   | `Created({"user": "Alice"})` |
+| `NoContent(message)`      | 204      | "No content"             | `NoContent()`          |
+
+### ❌ Error Responses  
+
+| Function                            | HTTP Code | Default Message            | Error Code             |
+|--------------------------------------|----------|----------------------------|------------------------|
+| `BadRequest(message, error_code)`   | 400      | "Bad request"              | `"BAD_REQUEST"`        |
+| `Unauthorized(message, error_code)` | 401      | "Unauthorized"             | `"UNAUTHORIZED"`       |
+| `Forbidden(message, error_code)`    | 403      | "Forbidden"                | `"FORBIDDEN"`          |
+| `NotFound(message, error_code)`     | 404      | "Not found"                | `"NOT_FOUND"`          |
+| `InternalServerError(message, error_code)` | 500 | "Internal server error" | `"INTERNAL_SERVER_ERROR"` |
+| `ServiceUnavailable(message, error_code)` | 503 | "Service unavailable" | `"SERVICE_UNAVAILABLE"` |
+
+
+## 🧪 Running Tests  
+Ensure all tests pass before deploying:  
+
+```sh
 pytest
-Sample output when successful:
+```
 
-sh
-Copy
-Edit
+##Sample output when successful:
+
+```sh
 ================================================== test session starts ===================================================
 collected 12 items
 tests/test_responses.py ............                                                                                [100%]
 =================================================== 12 passed in 1.06s ===================================================
-📁 Project Structure
-bash
-Copy
-Edit
+```
+
+##📁 Project Structure
+```
 PyResponse/
 │── responses.py               # Main response helper functions
 │── tests/
@@ -131,18 +133,28 @@ PyResponse/
 │── .github/workflows/         # GitHub CI/CD pipeline (if applicable)
 │── requirements.txt           # Dependencies
 │── README.md                  # Documentation
-🤝 Contribution
-Got ideas? Found a bug? Feel free to contribute!
+```
 
-Fork the repository
-Create a new branch
-Commit changes
-Push to your fork
-Create a Pull Request
-🛠️ Future Enhancements
+
+##🤝 Contribution
+
+###Got ideas? Found a bug? Feel free to contribute!
+
+- Fork the repository
+- Create a new branch
+- Commit changes
+- Push to your fork
+- Create a Pull Request
+
+  
+##🛠️ Future Enhancements
 ✅ Add logging for response tracking
 ✅ Support for more status codes
 ✅ Async support for FastAPI
-📜 License
+
+
+##📜 License
 MIT License. Use it however you like! 🚀
+
+
 
