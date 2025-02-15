@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+pyresponse/__init__.py
+pyresponse/response.py
+pyresponse_paradox.egg-info/PKG-INFO
+pyresponse_paradox.egg-info/SOURCES.txt
+pyresponse_paradox.egg-info/dependency_links.txt
+pyresponse_paradox.egg-info/requires.txt
+pyresponse_paradox.egg-info/top_level.txt
+tests/__init__.py
+tests/test_responses.py

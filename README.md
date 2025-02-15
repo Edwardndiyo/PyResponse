@@ -1,8 +1,8 @@
-# PyResponse 🚀  
+# PyResponse-paradox 🚀  
 A lightweight and structured response builder for Flask and FastAPI applications.  
 
 ## 📌 Overview  
-PyResponse provides a consistent and structured way to return API responses in Flask and FastAPI applications.  
+PyResponse-paradox provides a consistent and structured way to return API responses in Flask and FastAPI applications.  
 It helps standardize response formats while supporting custom messages, error codes, and flexible status handling.  
 
 ## 📖 Features  
