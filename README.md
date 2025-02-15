@@ -22,7 +22,8 @@ pip install flask fastapi pydantic pytest
 
 
 ## 🚀 Usage
-###🔹 Import & Use in Flask
+
+🔹 Import & Use in Flask
 
 ```py
 from flask import Flask
@@ -42,7 +43,7 @@ if __name__ == "__main__":
     app.run(debug=True)
 ```
 
-###🔹 Import & Use in FastAPI
+🔹 Import & Use in FastAPI
 
 ```py
 from fastapi import FastAPI
@@ -59,7 +60,9 @@ def missing():
     return NotFound(message="Item not found")
 ```
 
+
 ##🔧 Response Structure
+
 Every response follows a structured JSON format:
 
 ```json
@@ -87,7 +90,9 @@ def build_response(status_code, data=None, message=None, error_code=None):
     return JSONResponse(content=response_body, status_code=status_code)
 ```
 
+
 ##📡 Available Response Helpers
+
 ### ✅ Success Responses  
 
 | Function                  | HTTP Code | Default Message          | Example                 |
