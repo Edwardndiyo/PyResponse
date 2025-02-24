@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="pyresponse-paradox",  
-    version="0.1.0",  
+    version="0.2.0",  # Incremented version
     author="Edward Ndiyo",  
     author_email="NdiyoEdward@gmail.com",  
     description="A simple Python package for standardized API responses.",  
@@ -16,6 +16,7 @@ setup(
         "pydantic",
         "typing-extensions"
     ],  
+    license="MIT",  # Explicitly defining the license
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",

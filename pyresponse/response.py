@@ -1,5 +1,3 @@
-print("Running response.py...")  # Debugging check
-
 from fastapi.responses import JSONResponse
 from flask import jsonify, make_response, has_request_context
 
@@ -76,5 +74,3 @@ def InternalServerError(message="Internal server error", data=None, error_code="
 def ServiceUnavailable(message="Service unavailable", data=None, error_code="SERVICE_UNAVAILABLE"):
     return build_response(503, data, message, error_code)
 
-if __name__ == "__main__":
-    print("Response module is running...")
