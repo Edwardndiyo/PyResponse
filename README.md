@@ -14,12 +14,11 @@ It helps standardize response formats while supporting custom messages, error co
 
 ## 📦 Installation  
 
+To install PyResponse-paradox, simply run:
+
 ```sh
-pip install -r requirements.txt
-
-pip install flask fastapi pydantic pytest
+pip install pyresponse-paradox
 ```
-
 
 ## 🚀 Usage
 
@@ -113,21 +112,7 @@ def build_response(status_code, data=None, message=None, error_code=None):
 | `ServiceUnavailable(message, error_code)` | 503 | "Service unavailable" | `"SERVICE_UNAVAILABLE"` |
 
 
-## 🧪 Running Tests  
-Ensure all tests pass before deploying:  
 
-```sh
-pytest
-```
-
-##Sample output when successful:
-
-```sh
-================================================== test session starts ===================================================
-collected 12 items
-tests/test_responses.py ............                                                                                [100%]
-=================================================== 12 passed in 1.06s ===================================================
-```
 
 ##📁 Project Structure
 ```
@@ -153,9 +138,11 @@ PyResponse/
 
   
 ##🛠️ Future Enhancements
+
 ✅ Add logging for response tracking
 ✅ Support for more status codes
 ✅ Async support for FastAPI
+
 
 
 ##📜 License
